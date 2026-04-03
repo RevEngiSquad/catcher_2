@@ -100,11 +100,6 @@ class FileHandler extends ReportHandler {
 
   Future<void> _writeReportToFile(Report report) async {
     _printLog('Writing report to file');
-    _writeLineToFile(
-      '============================== '
-      'CATCHER 2 LOG '
-      '==============================',
-    );
     _writeLineToFile('Crash occurred on ${report.dateTime}');
     _writeLineToFile('');
     _writeLineToFile('---------- ERROR ----------');

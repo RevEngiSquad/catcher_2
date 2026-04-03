@@ -17,11 +17,6 @@ class ConsoleHandler extends ReportHandler {
   @override
   Future<bool> handle(Report report, BuildContext? context) {
     logger
-      ..info(
-        '============================== '
-        'CATCHER 2 LOG '
-        '==============================',
-      )
       ..info('Crash occurred on ${report.dateTime}')
       ..info('');
     logger
