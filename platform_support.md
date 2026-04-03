@@ -1,5 +1,5 @@
 ## Platform support
-Catcher 2 supports all platforms available in Flutter: 
+Catcher 2 supports all platforms available in Flutter:
 * Mobile: Android, iOS
 * Web
 * Desktop: Linux, Windows, MacOS
@@ -9,15 +9,8 @@ Some features available in Android/iOS won't be available in other platforms due
 Check table below to see which features are enabled in Platforms:
 |           Feature           | Android | iOS | Web | Linux | Windows | MacOS |
 |:---------------------------:|:-------:|:---:|:---:|:-----:|:-------:|:-----:|
-|  Application data in report |    ✔    |  ✔  |  ❌  |   ❌   |    ❌    |   ❌   |
 |       Console handler       |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
-|       Discord handler       |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
-|      Email auto handler     |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
 |         File handler        |    ✔    |  ✔  |  ❌  |   ✔   |    ✔    |   ✔   |
-|         Http handler        |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
-|        Sentry handler       |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
-|        Slack handler        |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
-|        Toast handler        |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
 |        Custom handler       |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
 |      Dialog report mode     |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
 |       Page report mode      |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
@@ -26,4 +19,3 @@ Check table below to see which features are enabled in Platforms:
 |   Explicit report mode map  |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
 | Explicit report handler map |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
 |         Error widget        |    ✔    |  ✔  |  ✔  |   ✔   |    ✔    |   ✔   |
-|          Screenshots        |    ✔    |  ✔  |  ❌  |   ✔   |    ✔    |   ✔   |
