@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 
 class ConsoleHandler extends ReportHandler {
   ConsoleHandler({
-    this.enableDeviceParameters = true,
-    this.enableApplicationParameters = true,
     this.enableStackTrace = true,
     this.enableCustomParameters = false,
     this.handleWhenRejected = false,
   });
 
-  final bool enableDeviceParameters;
-  final bool enableApplicationParameters;
   final bool enableStackTrace;
   final bool enableCustomParameters;
   final bool handleWhenRejected;
@@ -28,14 +24,6 @@ class ConsoleHandler extends ReportHandler {
       )
       ..info('Crash occurred on ${report.dateTime}')
       ..info('');
-    if (enableDeviceParameters) {
-      _printDeviceParametersFormatted(report.deviceParameters);
-      logger.info('');
-    }
-    if (enableApplicationParameters) {
-      _printApplicationParametersFormatted(report.applicationParameters);
-      logger.info('');
-    }
     logger
       ..info('---------- ERROR ----------')
       ..info('${report.error}')
@@ -50,24 +38,6 @@ class ConsoleHandler extends ReportHandler {
       '======================================================================',
     );
     return Future.value(true);
-  }
-
-  void _printDeviceParametersFormatted(Map<String, dynamic> deviceParameters) {
-    if (deviceParameters.isEmpty) return;
-    logger.info('------- DEVICE INFO -------');
-    for (final entry in deviceParameters.entries) {
-      logger.info('${entry.key}: ${entry.value}');
-    }
-  }
-
-  void _printApplicationParametersFormatted(
-    Map<String, dynamic> applicationParameters,
-  ) {
-    if (applicationParameters.isEmpty) return;
-    logger.info('------- APP INFO -------');
-    for (final entry in applicationParameters.entries) {
-      logger.info('${entry.key}: ${entry.value}');
-    }
   }
 
   void _printStackTraceFormatted(dynamic stackTrace) {

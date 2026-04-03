@@ -12,8 +12,6 @@ class FileHandler extends ReportHandler {
   FileHandler(
     this.file, {
     this.fileSupplier,
-    this.enableDeviceParameters = true,
-    this.enableApplicationParameters = true,
     this.enableStackTrace = true,
     this.enableCustomParameters = true,
     this.printLogs = false,
@@ -26,8 +24,6 @@ class FileHandler extends ReportHandler {
   /// Function that returns a file that should be written to. If this is set,
   /// [file] has no effect.
   final FileSupplier? fileSupplier;
-  final bool enableDeviceParameters;
-  final bool enableApplicationParameters;
   final bool enableStackTrace;
   final bool enableCustomParameters;
   final bool printLogs;
@@ -111,14 +107,6 @@ class FileHandler extends ReportHandler {
     );
     _writeLineToFile('Crash occurred on ${report.dateTime}');
     _writeLineToFile('');
-    if (enableDeviceParameters) {
-      _logDeviceParametersFormatted(report.deviceParameters);
-      _writeLineToFile('');
-    }
-    if (enableApplicationParameters) {
-      _logApplicationParametersFormatted(report.applicationParameters);
-      _writeLineToFile('');
-    }
     _writeLineToFile('---------- ERROR ----------');
     _writeLineToFile('${report.error}');
     _writeLineToFile('');
@@ -132,22 +120,6 @@ class FileHandler extends ReportHandler {
     _writeLineToFile(
       '======================================================================',
     );
-  }
-
-  void _logDeviceParametersFormatted(Map<String, dynamic> deviceParameters) {
-    _writeLineToFile('------- DEVICE INFO -------');
-    for (final entry in deviceParameters.entries) {
-      _writeLineToFile('${entry.key}: ${entry.value}');
-    }
-  }
-
-  void _logApplicationParametersFormatted(
-    Map<String, dynamic> applicationParameters,
-  ) {
-    _writeLineToFile('------- APP INFO -------');
-    for (final entry in applicationParameters.entries) {
-      _writeLineToFile('${entry.key}: ${entry.value}');
-    }
   }
 
   void _logCustomParametersFormatted(Map<String, dynamic> customParameters) {
